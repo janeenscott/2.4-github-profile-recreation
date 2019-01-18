@@ -1,3 +1,7 @@
-section{
-    background-color: #E1F7FA;
+*{
+    box-sizing: border-box;
+}
+
+img{
+    100%
 }
