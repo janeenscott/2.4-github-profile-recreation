@@ -51,6 +51,7 @@ bringing in html from other files. -->
 
 <div class="container-fluid">
 
+<div class="row">
     <div class="col-md-3">
 
         <div class="card" style="width: 228px;">
@@ -60,21 +61,49 @@ bringing in html from other files. -->
                     <p class="card-text">{{ username }}</p>
                     <a href="#" class="btn btn-primary">Edit</a>
                 </div>
+        </div>
 
         <hr>
 
         <h3>Organizations</h3>
-       <div class="width-26">
+        <div class="width-26">
            <img src="../static/ccs-org.png">
-       </div>
-
         </div>
+
+
     </div>
 
     <div class="col-md-9">
-    </div>
+        <div class="navbar navbar-expand-sm row">
+            <ul class="navbar-nav">
+                <li class="nav-item ml-5">
+                    Overview
+                </li>
+                <li class="nav-item ml-5">
+                    Repositories
+                </li>
+                <li class="nav-item ml-5">
+                    Stars
+                </li>
+                <li class="nav-item ml-5">
+                    Followers
+                </li>
+                <li class="nav-item ml-5">
+                    Following
+                </li>
+            </ul>
+        </div> <!--ends nav bar row with overview, repo, followers, etc -->
 
-</div>
+        <div class="row">
+            {% block content %}
+            {{ index.html }}
+            {% endblock %} }}
+        </div>
+
+    </div> <!--ends 9 column wide section that starts with top bar-->
+</div> <!--ends main row with side bar and top bar inside-->
+
+</div> <!--ends container-fluid section-->
 
 
 <footer></footer>
