@@ -15,37 +15,67 @@ bringing in html from other files. -->
 <body>
 
 <header>
-<nav class="navbar navbar-expand-sm">
-    <img src="../static/package/build/svg/mark-github.svg">
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="#">Pull requests</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Issues</a>
-    </li>
-      <li class="nav-item">
-      <a class="nav-link" href="#">Marketplace</a>
-    </li>
-      <li class="nav-item">
-      <a class="nav-link" href="#">Explore</a>
-    </li>
-  </ul>
+<nav class="navbar navbar-expand-sm row">
+    <div class="col-md-8">
+        <div class="row">
+            <img src="../static/package/build/svg/mark-github.svg">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pull requests</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Issues</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Marketplace</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Explore</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
-    <ul>
-        <li><img src="../static/package/build/svg/bell.svg" title="bell" alt="bell icon"></li>
-        <li><img src="../static/package/build/svg/plus.svg" title="bell" alt="bell icon"></li>
-        <li><img src="../static/placeholder.jpg" title="bell" alt="bell icon"></li>
 
-    </ul>
+
+    <div class="col-md-4">
+        <ul class="navbar-nav row float-right">
+                <li class="nav-item mx-5"><img src="../static/package/build/svg/bell.svg" title="bell" alt="bell icon"></li>
+                <li class="nav-item"><img src="../static/package/build/svg/plus.svg" title="plus" alt="plus icon"></li>
+                <li class="nav-item width-25 mx-5"></li>
+        </ul>
+    </div>
 </nav>
 </header>
 
-<body>
-<nav>
 
-</nav>
-</body>
+<div class="container-fluid">
+
+    <div class="col-md-3">
+
+        <div class="card" style="width: 228px;">
+            <img src="../static/placeholder.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ Name }}</h5>
+                    <p class="card-text">{{ username }}</p>
+                    <a href="#" class="btn btn-primary">Edit</a>
+                </div>
+
+        <hr>
+
+        <h3>Organizations</h3>
+       <div class="width-26">
+           <img src="../static/ccs-org.png">
+       </div>
+
+        </div>
+    </div>
+
+    <div class="col-md-9">
+    </div>
+
+</div>
+
 
 <footer></footer>
 

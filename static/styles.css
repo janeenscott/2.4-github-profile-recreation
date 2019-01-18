@@ -3,5 +3,22 @@
 }
 
 img{
-    100%
+    max-width: 100%;
 }
+
+.width-25{
+    content: '';
+    width: 25px;
+    background-image: url("placeholder.jpg");
+    background-size: cover;
+   }
+
+.show-box{
+    border: aquamarine solid 2px;
+}
+.width-26{
+    content: '';
+    width: 26px;
+    background-image: url("ccs-org.png");
+    background-size: cover;
+   }
