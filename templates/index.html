@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+
+<!--this means that the base html frame is being applied
+to this page first, then I can add pieces that need to change
+for this page. Extends is built-in, 'base.html' is my file name. -->
+
+
+{% block content %}
+<!--This is where I will put content that should populate
+or replace the content section in my base.hmtl file -->
+
+    <h2>Hi! Would you like to hear some music?</h2>
+    <h3>Cool, I make that.</h3>
+    <br>
+
+    <ul class="list-group">
+        {% for song in song_list %} <!-- Defines the variable song as one dictionary item in song_list. -->
+        <li class="list-group-item">
+            <a href="/postcards/">{{ song.title }}</a> <!-- This calls a key (title) from the dictionary (song) and returns it. This loops over the whole list until all titles in the dictionary are displayed.-->
+        </li>
+        {% endfor %}
+    </ul>
+<!--I don't really need to have something different in base.html
+and index.html, I just want to test and make sure it's working
+the way I think it should -->
+{% endblock %}

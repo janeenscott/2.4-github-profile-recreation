@@ -1,0 +1,63 @@
+<!--Base html file, essentially a template that creates
+the frame for the site. Includes sections that will change by
+bringing in html from other files. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Janeen's Songs</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/styles.css">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+<header>
+<nav class="navbar navbar-expand-sm bg-light">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Postcards</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Been Here Before</a>
+    </li>
+      <li class="nav-item">
+      <a class="nav-link" href="#">Barcelona</a>
+    </li>
+      <li class="nav-item">
+      <a class="nav-link" href="#">Settle My Heart</a>
+    </li>
+  </ul>
+</nav>
+
+
+<section class="d-flex justify-content-center"><h1>Janeen Scott</h1></section>
+</header>
+
+<div class="jumbotron">
+
+
+    {%  block content %}
+
+<!--Curly brace with percent sign signifies a template command. Block is built in, and content (make sure
+it's not entered as a string like classes are) is what I've named the block that will
+populate here. This is standard naming.-->
+
+    <h2>Hi! Would you like to hear some music?</h2>
+    <h3>Cool, I make that.</h3>
+
+    {% endblock %}
+<!--ends the block, similar to a closing tag. Everything below is template
+html that will look the same on all pages. These blocks only work when run on python server.-->
+
+</div>
+
+
+
+<footer class="blockquote-footer">Follow me on Instagram and Facebook @janeenscottmusic</footer>
+
+</body>
+
+</html>
