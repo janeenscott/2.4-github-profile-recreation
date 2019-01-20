@@ -17,10 +17,13 @@ img{
     border: aquamarine solid 2px;
 }
 .show-box-2{
-    border: pink solid 2px;
+    border: pink solid 5px;
 }
 .show-box-3{
     border: yellow solid 2px;
+}
+.show-box-4{
+    border: grey solid 2px;
 }
 .width-26{
     content: '';
