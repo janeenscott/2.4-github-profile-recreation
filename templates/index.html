@@ -2,20 +2,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<nav class="navbar navbar-light bg-light">
-  <form class="form-inline">
+<nav class="navbar navbar-light bg-light row">
+  <form class="form-inline col-12">
     <input class="form-control mr-sm-2" type="search" placeholder="Find a Repository" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Type</button>
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Language</button>
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">New</button>
   </form>
 </nav>
-<div>
+
+<div class="row">
 
     {% for repo in repos %}
-        {{ repo.name }}
+        <ul class="list-group col-12">
+            <li class="list-group-item"><a href="{{ repo.html_url }}">{{ repo.name }}</a> </li>
+        </ul>
     {% endfor %}
-
 
 </div>
 
