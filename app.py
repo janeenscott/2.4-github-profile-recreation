@@ -46,6 +46,11 @@ def followers():
     follower_content = requests.get('https://api.github.com/users/janeenscott/followers')
     translated_followers = follower_content.json()
 
+    def follower_details():
+
+
+
+
     context = {
         'name': translated['name'],
         'username': translated['login'],
