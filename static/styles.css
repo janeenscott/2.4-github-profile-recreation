@@ -16,6 +16,12 @@ img{
 .show-box{
     border: aquamarine solid 2px;
 }
+.show-box-2{
+    border: pink solid 2px;
+}
+.show-box-3{
+    border: yellow solid 2px;
+}
 .width-26{
     content: '';
     width: 26px;

@@ -11,15 +11,25 @@
   </form>
 </nav>
 
-<div class="row">
+
 
     {% for repo in repos %}
+
         <ul class="list-group col-12">
-            <li class="list-group-item"><a href="{{ repo.html_url }}">{{ repo.name }}</a> </li>
+            <li class="list-group-item">
+                <div class="row show-box-2">
+                    <a href="{{ repo.html_url }}">{{ repo.name }}</a>
+                    <p>{{ repo.language }}</p>
+                </div>
+                <div class="row show-box">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Star</button>
+                </div>
+            </li>
         </ul>
+
     {% endfor %}
 
-</div>
+
 
 {% endblock %}
 
