@@ -2,13 +2,17 @@
 
 {% block content %}
 
-    {% for follower in followers %}
+
 
         <ul class="list-group col-12">
             <li class="list-group-item">
                 <div class="row">
                     <div class="col-9">
-                    <h3>{{ name }}</h3>
+                    {%  for follower in followers %}
+                        <p>{{ follower.login }}</p>
+                        <p>{{ follower.name }}</p>
+                        <p>{{ follower.bio }}</p>
+                        {% endfor %}
                     </div>
 
                     <div class="col-3">
@@ -18,7 +22,7 @@
             </li>
         </ul>
 
-    {% endfor %}
+
 
 
 

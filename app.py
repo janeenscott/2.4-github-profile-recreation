@@ -43,10 +43,14 @@ def followers():
     user_data = requests.get('https://api.github.com/users/janeenscott')
     translated = user_data.json()
 
-    follower_content = requests.get('https://api.github.com/users/janeenscott/followers')
+    follower_content = requests.get(translated['followers_url'])
+    # same as follower_content = requests.get(https://api.github.com/users/janeenscott/followers)
     translated_followers = follower_content.json()
+    #translated followers is a list of dictionaries
 
-    def follower_details():
+    for follower in translated_followers:           # the variable follower is a dictionary containing the info for an
+                                                    # individual follower. I need to extract the url
+        print(follower['url'])
 
 
 
@@ -59,7 +63,9 @@ def followers():
         'email': translated['email'],
         'bio_image': translated['avatar_url'],
         'repos_url': translated['repos_url'],
-        'followers': translated_followers
+        'followers': follower
     }
+
+
 
     return render_template('followers.html', **context)
