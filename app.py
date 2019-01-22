@@ -51,21 +51,23 @@ def followers():
 
     follower_data = []
 
-    for follower in translated_followers:           # the variable follower is a dictionary containing the info for an
-        follower_url = follower['url']              # individual follower. I need to extract the url
-        print(follower_url)
-        # follower_url is the specific url for the follower api
-        # which was called from the follower dictionary by follower['url']
-        # now, each time it loops over the list of translated_followers, it will populate
-        # the variable follower_url with that specific api request address
+    for translated_follower in translated_followers:           # the variable follower is a dictionary containing the info for an
+        follower_dict = {
+            'login': translated_follower['login']
+        }
 
-    follower_api = requests.get(follower_url)
+        current_follower_response = requests.get(translated_follower['url'])
+        current_follower = current_follower_response.json()
 
-        # this should populate follower_api with the specific follower api request
 
-        # follower_data = follower_data.append(follower_api)
+        follower_dict['avatar_url'] = current_follower['avatar_url']
+        follower_dict['name'] = current_follower['name']
+        follower_dict['location'] = current_follower['location']
+        follower_dict['bio'] = current_follower['bio']
+        follower_dict['company'] = current_follower['company']
 
-    print(follower_api)
+        follower_data.append(follower_dict)
+
 
 
     context = {
@@ -75,8 +77,7 @@ def followers():
         'location': translated['location'],
         'email': translated['email'],
         'bio_image': translated['avatar_url'],
-        'repos_url': translated['repos_url'],
-        'followers': follower_api
+        'followers': follower_data
     }
 
     return render_template('followers.html', **context)
