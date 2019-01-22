@@ -5,12 +5,13 @@ import requests
 
 try:
     from github_key import github_api_key
-    headers = {'Authorization': 'token{}'.format(github_api_key)}
+    headers = {'Authorization': 'token {}'.format(github_api_key)}
 
 except:
     print("Hey, I see you don't have a github API key.")
     print("No worries. We will just use the public API.")
     headers = {}
+
 
 app = Flask(__name__)
 
@@ -25,7 +26,9 @@ def index():
     translated_repo = repo_content.json() # translated_repo is a list of dictionaries. 'repos' in
                                           # context below contains a list of dictionaries now. So I can
                                           # call dictionary items from the list through dot notation
+
                                           # in my index.html file
+
     context = {
         'name': translated['name'],
         'username': translated['login'],
