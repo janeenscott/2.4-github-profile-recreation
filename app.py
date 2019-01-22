@@ -3,6 +3,7 @@ from flask import Flask
 from flask import render_template
 import requests
 
+
 app = Flask(__name__)
 
 
@@ -48,11 +49,23 @@ def followers():
     translated_followers = follower_content.json()
     #translated followers is a list of dictionaries
 
+    follower_data = []
+
     for follower in translated_followers:           # the variable follower is a dictionary containing the info for an
-                                                    # individual follower. I need to extract the url
-        print(follower['url'])
+        follower_url = follower['url']              # individual follower. I need to extract the url
+        print(follower_url)
+        # follower_url is the specific url for the follower api
+        # which was called from the follower dictionary by follower['url']
+        # now, each time it loops over the list of translated_followers, it will populate
+        # the variable follower_url with that specific api request address
 
+    follower_api = requests.get(follower_url)
 
+        # this should populate follower_api with the specific follower api request
+
+        # follower_data = follower_data.append(follower_api)
+
+    print(follower_api)
 
 
     context = {
@@ -63,9 +76,7 @@ def followers():
         'email': translated['email'],
         'bio_image': translated['avatar_url'],
         'repos_url': translated['repos_url'],
-        'followers': follower
+        'followers': follower_api
     }
-
-
 
     return render_template('followers.html', **context)
